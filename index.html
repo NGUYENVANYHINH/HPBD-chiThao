@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Chúc Mừng Sinh Nhật">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#667eea">
+    <title>🎉 Chúc Mừng Sinh Nhật! 🎉</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- iPhone 16 Pro Max specific icons -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
+</head>
+<body>
+    <!-- Màn hình đầu tiên với con vật chạy -->
+    <div id="intro-screen" class="screen active">
+        <div class="container">
+            <div class="highlight-text" style="margin-top: 32px; font-size: 2rem;">Hi sếp</div>
+            <div class="highlight-text" style="font-size: 1.3rem; margin-top: 12px;">Sếp biết hôm nay là ngày gì không?</div>
+            <div class="animal-container">
+                <div class="animal">
+                    <div class="animal-body">👸</div>
+                    <div class="animal-shadow"></div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Màn hình mở quà -->
+    <div id="gift-screen" class="screen">
+        <div class="container">
+            <div class="surprise-message" style="margin: 30px 0; padding: 20px; background: linear-gradient(45deg, #ffd700, #fffbe6); border-radius: 15px; box-shadow: 0 10px 30px rgba(191,161,0,0.15); display: flex; justify-content: center; align-items: center; min-height: 120px;">
+                <img src="https://i.postimg.cc/bY9Yty67/anh.jpg" alt="Surprise" style="max-width: 80px; max-height: 80px; border-radius: 12px; box-shadow: 0 4px 24px #bfa10033; margin-bottom: 8px;">
+                <p class="surprise-text" style="margin: 0; font-size: 1.3rem; font-weight: bold; color: #bfa100; text-shadow: 0 2px 8px #fffbe6;">Ngày sếp ở đâu đó chui ra đó!!! 😂</p>
+            </div>
+            <div class="gift-message">
+                <h2>Mở quà đi sếp ơi!</h2>
+            </div>
+            <div class="gift-container">
+                <div class="gift-box" role="button" tabindex="0" aria-label="Mở quà sinh nhật">
+                    <svg id="gift-svg" width="200" height="220" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Shadow -->
+                        <ellipse cx="100" cy="210" rx="70" ry="12" fill="#e6c200" fill-opacity="0.25"/>
+                        <!-- Box body -->
+                        <rect x="25" y="70" width="150" height="110" rx="20" fill="url(#goldBox)" stroke="#bfa100" stroke-width="4"/>
+                        <!-- Ribbon vertical -->
+                        <rect x="90" y="70" width="20" height="110" rx="10" fill="url(#ribbonVert)"/>
+                        <!-- Ribbon horizontal -->
+                        <rect x="25" y="120" width="150" height="20" rx="10" fill="url(#ribbonHorz)"/>
+                        <!-- Lid (animated) -->
+                        <g id="gift-lid-svg">
+                            <rect x="20" y="40" width="160" height="40" rx="16" fill="url(#goldLid)" stroke="#bfa100" stroke-width="4"/>
+                            <!-- Ribbon on lid -->
+                            <rect x="95" y="40" width="10" height="40" rx="5" fill="url(#ribbonVert)"/>
+                        </g>
+                        <!-- Bow -->
+                        <ellipse cx="100" cy="40" rx="18" ry="10" fill="url(#bow1)"/>
+                        <ellipse cx="100" cy="40" rx="10" ry="6" fill="url(#bow2)"/>
+                        <ellipse cx="82" cy="40" rx="8" ry="5" fill="url(#bow1)"/>
+                        <ellipse cx="118" cy="40" rx="8" ry="5" fill="url(#bow1)"/>
+                        <circle cx="100" cy="40" r="5" fill="#fffbe6" stroke="#bfa100" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="goldBox" x1="25" y1="70" x2="175" y2="180" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fffbe6"/>
+                                <stop offset="0.5" stop-color="#ffd700"/>
+                                <stop offset="1" stop-color="#ffb300"/>
+                            </linearGradient>
+                            <linearGradient id="goldLid" x1="20" y1="40" x2="180" y2="80" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fffbe6"/>
+                                <stop offset="0.5" stop-color="#ffe066"/>
+                                <stop offset="1" stop-color="#bfa100"/>
+                            </linearGradient>
+                            <linearGradient id="ribbonVert" x1="100" y1="70" x2="100" y2="180" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fffbe6"/>
+                                <stop offset="1" stop-color="#ffe066"/>
+                            </linearGradient>
+                            <linearGradient id="ribbonHorz" x1="25" y1="130" x2="175" y2="130" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fffbe6"/>
+                                <stop offset="1" stop-color="#ffe066"/>
+                            </linearGradient>
+                            <linearGradient id="bow1" x1="82" y1="40" x2="118" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#ffe066"/>
+                                <stop offset="1" stop-color="#ffd700"/>
+                            </linearGradient>
+                            <linearGradient id="bow2" x1="90" y1="40" x2="110" y2="40" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#fffbe6"/>
+                                <stop offset="1" stop-color="#ffe066"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Màn hình lời chúc -->
+    <div id="message-screen" class="screen">
+        <div class="container">
+            <div class="birthday-message">
+                <h1 class="birthday-title">🎉 Happy birthday ! 🎉</h1>
+                <div class="friend-name">Sếp Thảo hay quên</div>
+                <div style="position: relative; display: flex; justify-content: center; align-items: center; margin: 24px 0; min-height: 180px;">
+                    <div class="blur-bg" style="position: absolute; inset: 0; border-radius: 32px; overflow: hidden; z-index: 1;">
+                        <img src="https://i.postimg.cc/bY9Yty67/anh.jpg" alt="Blur BG" style="width: 100%; height: 100%; object-fit: cover; filter: blur(18px) brightness(1.2) saturate(1.2); opacity: 0.7;">
+                    </div>
+                    <img src="https://i.postimg.cc/bY9Yty67/anh.jpg" alt="Surprise" style="max-width: 240px; max-height: 240px; border-radius: 28px; box-shadow: 0 4px 24px #bfa10033; position: relative; z-index: 2;">
+                </div>
+                <div class="message-content">
+                    <div class="wish-highlight">
+                        <svg class="svg-firework" width="32" height="64" viewBox="0 0 32 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="14" y="32" width="4" height="28" rx="2" fill="#bfa100"/>
+                            <ellipse cx="16" cy="32" rx="8" ry="8" fill="#fffbe6"/>
+                            <g class="firework-sparks">
+                                <line x1="16" y1="32" x2="16" y2="12" stroke="#ffd700" stroke-width="2"/>
+                                <line x1="16" y1="32" x2="6" y2="18" stroke="#ffd700" stroke-width="2"/>
+                                <line x1="16" y1="32" x2="26" y2="18" stroke="#ffd700" stroke-width="2"/>
+                                <line x1="16" y1="32" x2="2" y2="28" stroke="#fffbe6" stroke-width="2"/>
+                                <line x1="16" y1="32" x2="30" y2="28" stroke="#fffbe6" stroke-width="2"/>
+                            </g>
+                        </svg>
+                        <span>🎁 Chúc sếp luôn xinh đẹp và rạng rỡ như hôm nay! 🎁</span>
+                        <svg class="svg-firework" width="32" height="64" viewBox="0 0 32 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="14" y="32" width="4" height="28" rx="2" fill="#bfa100"/>
+                            <ellipse cx="16" cy="32" rx="8" ry="8" fill="#fffbe6"/>
+                            <g class="firework-sparks">
+                                <line x1="16" y1="32" x2="16" y2="12" stroke="#ffd700" stroke-width="2"/>
+                                <line x1="16" y1="32" x2="6" y2="18" stroke="#ffd700" stroke-width="2"/>
+                                <line x1="16" y1="32" x2="26" y2="18" stroke="#ffd700" stroke-width="2"/>
+                                <line x1="16" y1="32" x2="2" y2="28" stroke="#fffbe6" stroke-width="2"/>
+                                <line x1="16" y1="32" x2="30" y2="28" stroke="#fffbe6" stroke-width="2"/>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                <div class="hearts" role="img" aria-label="Bánh kem">🎂</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confetti container -->
+    <div id="confetti-container"></div>
+
+    <audio id="birthday-music" src="https://raw.githubusercontent.com/NGUYENVANYHINH/graduation-music/main/snapvideo.co----Happy%20Birth%20Day.mp3" preload="auto" loop></audio>
+    <script src="script.js"></script>
+</body>
+</html> 
